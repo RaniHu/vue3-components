@@ -1,0 +1,28 @@
+<template>
+  <div>
+    <!-- Your content -->
+  </div>
+</template>
+
+<script lang="ts">
+  import { defineComponent, getCurrentInstance, SetupContext } from 'vue';
+  import { {{camelCase name}}Emits, {{properCase name}}Emits, {{camelCase name}}Props } from './config/props';
+
+  export default defineComponent({
+    name: 'Mb{{properCase name}}',
+    props: {{camelCase name}}Props,
+    emits: {{camelCase name}}Emits,
+    setup() {
+      const instance = getCurrentInstance()!;
+      const emit = instance.emit as SetupContext<{{properCase name}}Emits>['emit'];
+
+      return {
+        emit,
+      };
+    },
+  });
+</script>
+
+<style lang="scss" scoped>
+  @import './{{ kebabCase name }}.scss';
+</style>

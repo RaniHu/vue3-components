@@ -1,0 +1,8 @@
+import {{ properCase name }} from './src/{{ kebabCase name }}.vue';
+import { ExtractPropTypes } from 'vue';
+import { withInstall } from '/@/utils/vue/install';
+import { {{ camelCase name }}Props } from './src/config/props';
+
+export const Mb{{ properCase name }} = withInstall({{ properCase name }});
+export declare type {{ properCase name }}Props = Partial<ExtractPropTypes<typeof {{ camelCase name }}Props>>;
+export type Mb{{ properCase name }}Instance = InstanceType<typeof Mb{{ properCase name }}>;
